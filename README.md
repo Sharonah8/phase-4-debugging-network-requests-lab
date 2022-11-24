@@ -62,12 +62,23 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+The error I got was a 500 internal server error
+
+- How I debugged:
+
+I checked my Rails server log and got a NameError for ToysController. I checked and saw that for the create action, they used Toys model instead of Toy (singular).
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+The errors I got was an unpermitted parameter :id. I added this to the set_params in the controller.
+I then got an "Unexpected end of JSON input error" in my console.
+
+- How I debugged:
+  I added the :id param to the set_params method in the controller
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+The error I got was that no route was specified that matches DELETE
+
+- How I debugged:
+  I added the :destroy action in the controller
